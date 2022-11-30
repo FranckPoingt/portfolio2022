@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Franck-P-s-workspace-vpcbi7.us-west-2.xata.sh/db/portfolio",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}

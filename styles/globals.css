@@ -1,26 +1,42 @@
 html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+body,
+#__next {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.canvas {
+    touch-action: none;
 }
 
-* {
-  box-sizing: border-box;
+.htmlScreen iframe {
+    width: 1024px;
+    height: 670px;
+    border: none;
+    border-radius: 20px;
+    background: #000000;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.htmlPhoneScreen iframe {
+    width: 525px;
+    height: 1124px;
+    border: none;
+    border-radius: 75px;
+    background: #000000;
+}
+
+.parallax {
+    scrollbar-width: none;
+    max-height: calc(100vh - 225px);
+}
+
+.parallax::-webkit-scrollbar {
+    display: none;
+}
+
+.projectInfos {
+    width: 50vw;
+    height: 100vh;
 }

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Where is the Sketchfab team?
+* source:	https://sketchfab.com/3d-models/where-is-the-sketchfab-team-0ff2bb7d8f0c4f04a8d09cfaf842fbf2
+* author:	Sketchfab (https://sketchfab.com/Sketchfab)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Where is the Sketchfab team?" (https://sketchfab.com/3d-models/where-is-the-sketchfab-team-0ff2bb7d8f0c4f04a8d09cfaf842fbf2) by Sketchfab (https://sketchfab.com/Sketchfab) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
