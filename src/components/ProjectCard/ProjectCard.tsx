@@ -12,7 +12,7 @@ export interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick, ...rest }) => {
   return (
     <StyledProjectCard onClick={onClick} {...rest}>
-      <ProjectLink href={project.logo_url ?? '/projects'}>
+      <ProjectLink href={project.url ?? '/projects'}>
         {project.logo_url ? (
           <Image src={project.logo_url} alt={project.name!} width={100} />
         ) : (
