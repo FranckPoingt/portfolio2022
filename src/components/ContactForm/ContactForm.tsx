@@ -5,12 +5,13 @@ import { openModal, closeAllModals } from '@mantine/modals'
 import { z } from 'zod'
 import JSConfetti from 'js-confetti'
 import { useRouter } from 'next/router'
+import encode from '@src/helpers/encode'
 
 const schema = z.object({
   name: z.string().max(50),
   company: z.string().max(50),
   email: z.string().email({ message: 'Invalid email' }),
-  message: z.string().min(1).max(1000, { message: 'Message is too long' })
+  message: z.string().min(1, { message: 'Your message is too short, tell me more' }).max(1000, { message: 'Your message is too long' })
 })
 
 const ContactForm = () => {
@@ -28,7 +29,15 @@ const ContactForm = () => {
     }
   })
 
-  const handleSubmit = async (values) => {
+  const handleSubmit = async (values, event) => {
+    event.preventDefault()
+    await fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode({ "form-name": "contact", ...values })
+    }).catch(error => console.error(error));
+
+
     const response = await fetch('/api/sendMessage', {
       method: 'POST',
       headers: {
@@ -79,8 +88,8 @@ const ContactForm = () => {
           method="POST"
           data-netlify="true"
           action="/contact"
-          onSubmit={form.onSubmit(values => {
-            handleSubmit(values)
+          onSubmit={form.onSubmit((values, event) => {
+            handleSubmit(values, event)
           })}
         >
           <input type="hidden" name="form-name" value="contact" />
@@ -118,7 +127,7 @@ const ContactForm = () => {
             py="sm"
             {...form.getInputProps('message')}
           />
-          <Button type="submit" fullWidth mt="sm">
+          <Button type="submit" fullWidth mt="sm" disabled={!form.isValid()}>
             Send
           </Button>
         </form>
