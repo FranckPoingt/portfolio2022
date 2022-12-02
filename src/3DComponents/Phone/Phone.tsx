@@ -36,7 +36,7 @@ const Phone = ({ iframe }: Props) => {
               rotation-x={0}
               rotation-y={0}
             >
-              {iframe ? <iframe src={iframe} style={{ padding: '8px' }} /> :
+              {iframe ? <iframe src={iframe} /> :
                 <iframe allow="fullscreen" frameBorder="0" height="360" src="https://giphy.com/embed/2KZ2v2vifTGTvGg1fu/video" width="480" />
               }
             </Html>

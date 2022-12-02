@@ -1,4 +1,4 @@
-import Reqct, { useRef, useState } from "react"
+import React, { useRef, useState } from "react"
 import { SelectedPick } from "@xata.io/client"
 import { GetStaticProps, NextPage } from "next"
 import { Environment } from "@react-three/drei"
@@ -83,7 +83,7 @@ const Projects: NextPage<Props> = ({ projects }) => {
             .sort((a, b) => a.display_order! - b.display_order!)
             .map((project, index, array) => (
               <ParallaxLayer key={project.id} offset={index} speed={0.5}>
-                <Box id={project.name!}>
+                <Box component="section" id={project.name!}>
                   <ProjectCard project={project} onClick={() => setIframe(project.url)} />
                   <Group>
                     {index !== 0 && (
@@ -91,7 +91,7 @@ const Projects: NextPage<Props> = ({ projects }) => {
                         mt="sm"
                         variant="gradient"
                         onClick={(e) => handlePrevClick(e, index)}>
-                        Previous Project
+                        Previous project
                       </Button>
                     )}
                     {index < array.length - 1 ? (
@@ -99,7 +99,7 @@ const Projects: NextPage<Props> = ({ projects }) => {
                         mt="sm"
                         variant="gradient"
                         onClick={(e) => handleNextClick(e, index)}>
-                        Next Project
+                        Next project
                       </Button>
                     )
                       : (
@@ -107,7 +107,7 @@ const Projects: NextPage<Props> = ({ projects }) => {
                           mt="sm"
                           variant="gradient"
                           onClick={(e) => handleBackToTopClick(e, index)}>
-                          Back to Top
+                          Back to top
                         </Button>
                       )
                     }

@@ -70,10 +70,16 @@ const ContactModal = () => {
   return (
     <div>
       <Stack spacing="sm">
-        <form onSubmit={form.onSubmit(values => {
-          handleSubmit(values)
-        })}>
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          action="/contact"
+          onSubmit={form.onSubmit(values => {
+            handleSubmit(values)
+          })}>
           <TextInput
+            name="name"
             placeholder="Your name"
             radius="md"
             size="md"
@@ -81,6 +87,7 @@ const ContactModal = () => {
             {...form.getInputProps('name')}
           />
           <TextInput
+            name="company"
             placeholder="Your company"
             radius="md"
             size="md"
@@ -88,6 +95,7 @@ const ContactModal = () => {
             {...form.getInputProps('company')}
           />
           <TextInput
+            name="email"
             placeholder="Your email"
             radius="md"
             size="md"
@@ -95,6 +103,7 @@ const ContactModal = () => {
             {...form.getInputProps('email')}
           />
           <Textarea
+            name="message"
             placeholder="Your message"
             radius="md"
             withAsterisk

@@ -4,8 +4,7 @@ import { StyledLink } from './styles'
 
 export interface NavLinkProps extends LinkProps {
   children: React.ReactNode
-  active?: boolean
-  href: string
+  active: boolean
   color?: string
 }
 
