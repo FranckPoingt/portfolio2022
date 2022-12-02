@@ -78,6 +78,7 @@ const ContactModal = () => {
           onSubmit={form.onSubmit(values => {
             handleSubmit(values)
           })}>
+          <input type="hidden" name="form-name" value="contact" />
           <TextInput
             name="name"
             placeholder="Your name"
