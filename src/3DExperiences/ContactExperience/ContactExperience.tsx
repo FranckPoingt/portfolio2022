@@ -1,10 +1,8 @@
 import React, { useRef } from 'react'
+import { useRouter } from 'next/router'
 import { Center, Float } from '@react-three/drei'
 import { Group } from 'three'
-import { openModal } from '@mantine/modals'
-import { Title } from '@mantine/core'
 import { githubUrl, linkedinUrl } from '@src/helpers/constants'
-import ContactModal from '@src/components/ContactModal/ContactModal'
 import ContactIcon from '@src/3DComponents/ContactIcon/ContactIcon'
 
 const ContactExperience = () => {
@@ -12,14 +10,7 @@ const ContactExperience = () => {
   const github = useRef<Group>(null)
   const email = useRef<Group>(null)
 
-  const handleMailClick = () => {
-    openModal({
-      title: <Title order={1}>Contact</Title>,
-      centered: true,
-      radius: 'md',
-      children: <ContactModal />
-    })
-  }
+  const { push } = useRouter()
 
   return (
     <Center>
@@ -39,7 +30,7 @@ const ContactExperience = () => {
         <ContactIcon
           position={[0.25, 1.1, 1.6]}
           ref={email}
-          onClick={handleMailClick}
+          onClick={() => push('/contact/email')}
           svgSrc="./paper-plane.svg"
           svgScale={0.002}
           svgPosition={[-0.5, 0.52, 0.2]}

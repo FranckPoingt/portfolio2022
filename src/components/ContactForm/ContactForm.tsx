@@ -4,6 +4,7 @@ import { useForm, zodResolver } from '@mantine/form'
 import { openModal, closeAllModals } from '@mantine/modals'
 import { z } from 'zod'
 import JSConfetti from 'js-confetti'
+import { useRouter } from 'next/router'
 
 const schema = z.object({
   name: z.string().max(50),
@@ -12,7 +13,9 @@ const schema = z.object({
   message: z.string().min(1).max(1000, { message: 'Message is too long' })
 })
 
-const ContactModal = () => {
+const ContactForm = () => {
+  const { push } = useRouter()
+
   const form = useForm({
     validate: zodResolver(schema),
     validateInputOnBlur: true,
@@ -57,13 +60,14 @@ const ContactModal = () => {
           confettiNumber: 100,
           emojiSize: 30
         })
-      }, 500)
+      }, 1000)
 
       setTimeout(() => {
         closeAllModals()
         jsConfetti.clearCanvas()
+        push('/contact')
       }
-        , 4000)
+        , 5000)
     }
   }
 
@@ -77,7 +81,8 @@ const ContactModal = () => {
           action="/contact"
           onSubmit={form.onSubmit(values => {
             handleSubmit(values)
-          })}>
+          })}
+        >
           <input type="hidden" name="form-name" value="contact" />
           <TextInput
             name="name"
@@ -122,4 +127,4 @@ const ContactModal = () => {
   )
 }
 
-export default ContactModal
+export default ContactForm
