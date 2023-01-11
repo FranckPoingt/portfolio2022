@@ -24,7 +24,7 @@ const ExperienceCard: React.FC<Props> = ({ experience, iconList }) => {
             width={isMobile ? 250 : 350} />
         </Link>
         <Text size={isMobile ? "md" : "xl"} fw="bold">
-          {`Fullstack Engineer - ${experience.start} / ${experience.end} (16 months) `}
+          {`Fullstack Engineer - ${experience.start} / ${experience.end}`}
         </Text>
         <Group spacing="xs" sx={{ maxWidth: '75vw' }} >
           {experience.stack!.map((item, index) => (
