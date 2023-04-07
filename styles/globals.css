@@ -1,43 +1,43 @@
 html,
 body,
 #__next {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .canvas {
-    touch-action: none;
+  touch-action: none;
 }
 
 .htmlScreen iframe {
-    width: 1024px;
-    height: 670px;
-    border: none;
-    border-radius: 20px;
-    background: #000000;
+  width: 1024px;
+  height: 670px;
+  border: none;
+  border-radius: 20px;
+  background: #000000;
 }
 
 .htmlPhoneScreen iframe {
-    width: 525px;
-    height: 1124px;
-    border: none;
-    border-radius: 75px;
-    background: #000000;
-    padding: 0.5rem;
+  width: 525px;
+  height: 1124px;
+  border: none;
+  border-radius: 75px;
+  background: #000000;
+  padding: 0.5rem;
 }
 
 .parallax {
-    scrollbar-width: none;
-    max-height: calc(100vh - 225px);
+  scrollbar-width: none;
+  max-height: calc(100vh - 225px);
 }
 
 .parallax::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .projectInfos {
-    width: 50vw;
-    height: 100vh;
+  width: 50vw;
+  height: 100vh;
 }
