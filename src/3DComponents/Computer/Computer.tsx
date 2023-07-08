@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import { ContactShadows, Float, Html, useGLTF } from '@react-three/drei';
 import { EffectComposer, Glitch } from '@react-three/postprocessing';
 
@@ -23,9 +23,11 @@ const Computer = ({ iframe }: Props) => {
             position={[0, 0.55, -1.15]} />
           <primitive object={computer.scene} position-y={-1.2} scale={1.25}>
             {!iframe &&
-              <EffectComposer>
+            <Suspense fallback={null}>
+              <EffectComposer autoClear>
                 <Glitch />
               </EffectComposer>
+            </Suspense>
             }
             <Html
               transform
@@ -37,7 +39,6 @@ const Computer = ({ iframe }: Props) => {
               {iframe ? <iframe src={iframe} /> :
                 <iframe
                   allow="fullscreen"
-                  frameBorder="0"
                   height="360"
                   src="https://giphy.com/embed/2KZ2v2vifTGTvGg1fu/video"
                   width="480" />

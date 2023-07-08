@@ -17,11 +17,11 @@
     "@mantine/hooks": "^5.9.0",
     "@mantine/modals": "^5.9.0",
     "@mantine/next": "^5.9.0",
-    "@react-spring/parallax": "^9.5.5",
-    "@react-three/drei": "^9.43.3",
-    "@react-three/fiber": "^8.9.1",
-    "@react-three/postprocessing": "^2.7.0",
-    "@react-three/rapier": "^0.11.0",
+    "@react-spring/parallax": "^9.7.2",
+    "@react-three/drei": "^9.74.6",
+    "@react-three/fiber": "^8.13.4",
+    "@react-three/postprocessing": "^2.14.9",
+    "@react-three/rapier": "^1.0.1",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
@@ -29,17 +29,17 @@
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
     "js-confetti": "^0.11.0",
-    "next": "13.0.5",
+    "next": "^13.4.4",
     "postprocessing": "^6.29.1",
-    "r3f-perf": "^6.6.0",
+    "r3f-perf": "^7.1.2",
     "react": "18.2.0",
     "react-device-detect": "^2.2.2",
     "react-dom": "18.2.0",
-    "three": "^0.146.0",
+    "three": "^0.153.0",
     "typescript": "4.9.3",
     "zod": "^3.19.1"
   },
   "devDependencies": {
-    "@types/three": "^0.146.0"
+    "@types/three": "^0.152.1"
   }
 }
